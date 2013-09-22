@@ -2,8 +2,8 @@
 	<%= link_to "Home", root_path %>
 </div>
 <div>
-	<%=  @restaurant.name %>
-	<%= @restaurant.summary %>
+	<p>Name:<%=  @restaurant.name %></p><br>
+	<p>Description<%= @restaurant.summary %></p>
 </div>
 <div>
 	<%= link_to "edit", edit_restaurant_path %>
