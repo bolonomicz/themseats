@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_time: 2013-09-22 14:19:26
+  end_time: 2013-09-22 14:19:26
+  part_size: 1
+  user: 
+  restaurant: 
+
+two:
+  start_time: 2013-09-22 14:19:26
+  end_time: 2013-09-22 14:19:26
+  part_size: 1
+  user: 
+  restaurant: 
