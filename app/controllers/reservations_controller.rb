@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
 	before_filter :require_login
 	
 	def index
-		@reservations = Reservation.where(customer: current_user.id)
+		@reservations = Reservation.all
 	end
 
 	def show

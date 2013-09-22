@@ -14,6 +14,7 @@ Themseats::Application.routes.draw do
   resources :users do 
     resources :reservations
   end
+  resources :reservations
   resources :sessions
 
   #get "secret" => "home#secret", :as => "secret"
