@@ -6,5 +6,8 @@
 	<p>Description<%= @restaurant.summary %></p>
 </div>
 <div>
+	<p><%= link_to "Make a reservation", new_restaurant_reservation_path(@restaurant) %></p>
+</div>
+<div>
 	<%= link_to "edit", edit_restaurant_path %>
 </div>

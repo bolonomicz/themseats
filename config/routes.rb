@@ -4,14 +4,18 @@ Themseats::Application.routes.draw do
 
   root :to => 'restaurants#index'
 
-  resources :restaurants
+  resources :restaurants do
+    resources :reservations 
+  end
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
-  resources :users
+  resources :users do 
+    resources :reservations, only: [:index, :show]
+  end
   resources :sessions
-  resources :reservations
+
   #get "secret" => "home#secret", :as => "secret"
   #root :to => "home#index"
   # The priority is based upon order of creation:

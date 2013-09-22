@@ -1,0 +1,19 @@
+<div>
+  <%= form_for [@restaurant, @reservation]  do |f| %>
+  <div>
+  	<%= f.label :part_size %>
+  	<%= f.number_field :part_size %>
+  </div>
+  <div>
+  	<%= f.label :start_time %>
+  	<%= f.datetime_select :start_time %>
+  </div>
+  <div>
+    <%= f.label :end_time %>
+    <%= f.datetime_select :end_time %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>
