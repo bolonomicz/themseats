@@ -1,0 +1,12 @@
+<div>
+	<%= link_to "Home", root_path %>
+</div>
+<div>
+	<p>Start time:<%=  @reservation.start_time %></p><br>
+	<p>End time:<%= @reservation.end_time %></p><br>
+	<p>Party size:<%= @reservation.part_size %></p>
+</div>
+<div>
+	<p><%= link_to "change reservation", edit_restaurant_reservation_path(@reservation) %></p>
+</div>
+

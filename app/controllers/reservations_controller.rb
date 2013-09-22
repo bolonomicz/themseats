@@ -2,8 +2,7 @@ class ReservationsController < ApplicationController
 	before_filter :require_login
 	
 	def index
-		@reservations = Reservation.all 
-		
+		@reservations = Reservation.where(customer: current_user.id)
 	end
 
 	def show
@@ -25,17 +24,25 @@ class ReservationsController < ApplicationController
 	end
 	
 	def edit
+		@restaurant = Restaurant.find(params[:restaurant_id])
 		@reservation = Reservation.find(params[:id])
 	end
 
 	def update
 		@reservation = Reservation.find(params[:id])
-		@reservation.update_attributes(params[:reservation])
+		 if @reservation.update_attributes(params[:reservation])
+      redirect_to restaurant_reservation_path(@reservation)
+    else
+      render 'edit'
+    end
 
-
-		flash.notice = "Reservation was updated"
-
-		redirect_to reservation_path(@reservation)
+	# @restaurant = Restaurant.find(params[:restaurant_id])
+	# @reservation = @restaurant.reservations.update_attributes(params[:reservation])
+	# 		redirect_to root_path
+	# 		flash.notice = "Reservation was updated"
+	# 	# else
+	# 	# 	render 'edit'
+	# 	#end
 	end
 
 	def destroy

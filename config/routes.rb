@@ -12,7 +12,7 @@ Themseats::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   resources :users do 
-    resources :reservations, only: [:index, :show]
+    resources :reservations
   end
   resources :sessions
 
