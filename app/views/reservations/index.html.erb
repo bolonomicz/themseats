@@ -1,8 +1,8 @@
 <% @reservations.each do |reservation| %>
 <div>
-	<%= reservation.start_time %>
-	<%= reservation.end_time %>
-	<%= reservation.user.email %>
+	Start time:<%= reservation.start_time.strftime("%b %e, %l:%M %p")%>
+	End time::<%= reservation.end_time.strftime("%b %e, %l:%M %p")%>
+	<%= link_to reservation.user.email,  edit_reservation_path(reservation)%>
 	<%= reservation.part_size %>
 </div>
 <% end %>
