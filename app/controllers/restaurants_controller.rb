@@ -37,7 +37,9 @@ class RestaurantsController < ApplicationController
 
 	def destroy
 		@restaurant.find(params[:id])
-		@restaurant.destroy, :flash => "Restaurant has been delisted"
-		
+		@restaurant.destroy
+
+		flash.notice = "Restaurant #{@restaurant.name} has been delisted"
+		redirect_to root_path
 	end
 end

@@ -1,1 +1,13 @@
-<h1>this is the restaurant index</h1>
+<h1>Restaurants</h1>
+
+<div>
+	<% @restaurants.each do |restaurant| %>
+		<%= link_to restaurant.name, restaurant_path(restaurant) %>
+	<% end %>
+</div>
+
+<div>
+	<%= link_to "Register a Restaurant", new_restaurant_path %>
+</div>
+
+
